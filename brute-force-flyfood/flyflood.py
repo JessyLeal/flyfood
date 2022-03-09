@@ -1,6 +1,7 @@
 file = open('teste.txt', 'r')
+from time import time
 all_routes = []
-
+inicio = time()
 def in_data():
     """Na funçao `in_data` é tratado os dados da matriz lida do arquivo txt."""
     points = {}
@@ -45,7 +46,11 @@ def min_cost(routes, points):
         if vl< mn:
             smaller = k
             mn = vl    
-    return print(smaller) 
+
+    return print(smaller)
 
 in_= in_data()
 min_cost(perm([p for p in in_ if p !='R']), in_)
+fim = time()
+print(fim-inicio)
+
